@@ -1,0 +1,13 @@
+rm -rf   /usr/bin/python #删除链接
+
+ln -s /usr/local/python/python3/bin/python3 /usr/bin/python
+	#建立链接
+
+
+#ln -s /usr/local/python3/bin/python3 /usr/bin/python	中间路径换了，更改链接。
+
+rm -rf	/usr/bin/python
+	因为执行yum需要python2版本，所以我们还要修改yum的配置，
+		执行：vi /usr/bin/yum
+		把#! /usr/bin/python修改为#! /usr/bin/python2
+	同理 vi /usr/libexec/urlgrabber-ext-down 	文件里面的#! /usr/bin/python 也要修改为#! /usr/bin/python2
