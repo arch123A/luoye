@@ -1,0 +1,13 @@
+1)pwd,打印当前完整工作目录。
+2) cd ,cd ../ 	进入上级目录。
+3）ls,列表命令，ls -l 显示当前文件夹内文件详细信息；
+	ls -a 显示隐藏文件；
+4）more,分屏显示文件与目录
+5）cat 显示或链接文本文件。
+	1. cat filename	显示整个文件；
+	2. cat>filename 创建新文件 
+	3. cat file1 file2 >file3 合并成文件file3存放起来。
+6）mkdir 创建新文件夹，参数 -p 		，能在不存上级在目录的时候同样创建。如：mkdir -p /tmp/test/yhy;同时创建多个文件夹，如：mkdir y1 y2 y3;
+7)touch 创建新的空文件或者修改已经有的时间戳。如：touch f1 f2
+8)rmdir 删除目录
+9）rm 删除文件或者目录。

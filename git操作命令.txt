@@ -5,6 +5,7 @@ git -l 显示当前列表
 git push -u origin master 登陆
 git clone 克隆远程仓库
 git push 添加到远程仓库
+git add -A 上传所有文件到缓冲区
 
 
 
