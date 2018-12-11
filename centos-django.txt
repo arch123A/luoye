@@ -52,7 +52,7 @@
     virtualenv dj11（创建了名为env1的虚拟环境）
     在本地生成了一个名为env1的文件夹
     启动虚拟环境：
-    cd dj1/
+    cd /root/test/dj1/
     source bin/activate
     退出虚拟环境：
     deactivate
