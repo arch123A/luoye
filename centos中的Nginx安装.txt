@@ -1,0 +1,31 @@
+
+centos中的Nginx安装
+添加CentOS 7 Nginx yum资源库,打开终端,使用以下命令:
+
+sudo rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+sudo yum install -y nginx
+
+Nginx不会自行启动。运行Nginx:
+sudo systemctl start nginx.service
+sudo systemctl enable nginx.service
+
+$ sudo systemctl enable nginx.service
+# 等同于
+$ sudo ln -s '/etc/systemd/system/multi-user.target.wants/nginx.service' '/usr/lib/systemd/system/nginx.service'
+
+Nginx配置信息
+网站文件存放默认目录
+
+/usr/share/nginx/html
+网站默认站点配置
+
+/etc/nginx/conf.d/default.conf
+自定义Nginx站点配置文件存放目录
+
+/etc/nginx/conf.d/
+Nginx全局配置
+
+/etc/nginx/nginx.conf
+Nginx启动
+
+nginx -c nginx.conf
