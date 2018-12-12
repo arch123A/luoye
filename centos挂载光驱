@@ -1,0 +1,15 @@
+1.查看系统版本:cat /etc/issue//查看发行版本
+    2.将对应镜像放入光驱，
+    3.挂载镜像文件
+        mount /dev/cdrom /mnt
+        mount是挂载命令
+        /dev/cdron //代表光驱
+        /mnt //是挂载点
+    4.cd /mnt
+    5.cd Packages/
+    6.rpm -ivh tree(Tab补全）     //安装 
+--------------------- 
+作者：葡萄味的白兰地 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_22510521/article/details/70946226 
+版权声明：本文为博主原创文章，转载请附上博文链接！
