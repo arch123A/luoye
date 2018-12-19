@@ -1,0 +1,31 @@
+
+
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+
+class Comment(models.Model):
+  author = models.ForeignKey(User)
+  body = models.TextField(blank=True)
+  content_type = models.ForeignKey(ContentType)
+  object_id = models.PositiveIntegerField()
+  content_object = GenericForeignKey()
+ 
+ 
+ from django.contrib.contenttypes.fields import GenericRelation
+
+class Post(models.Model):
+  author = models.ForeignKey(User)
+  title = models.CharField(max_length=75)
+  body = models.TextField(blank=True)
+  comments = GenericRelation('Comment')
+
+class Picture(models.Model):
+  author = models.ForeignKey(User)
+  image = models.ImageField()
+  caption = models.TextField(blank=True)
+  comments = GenericRelation('Comment')
+
+>>> me = User.objects.get(username='myusername')
+>>> pic = Picture.objects.get(author=me)
+>>> pic.comments.create(author=me, body="Man, I'm cool!")
+>>> pic.comments.all()[<Comment: "Man, I'm cool!">]
