@@ -1,0 +1,147 @@
+GenericForeignKey Generic Relation 和ContentType 
+
+Generic Relation 并不是一个新出的东西，不过此前我一直没有使用过。现在为了将 SharePlat 中的某些功能独立出来，我开始使用它了。在django 源码中的文档中并没有 Generic Relation 的说明，你可以从 django 的网站找到这一文档。
+
+在 文档中描述得很清楚。基本上有两种使用:GenericForeignKey和GenericRelation。比如我有一个Topic表，它用来保存讨 论主题。然后有一个Comment表，它用来保存回复。为了使用Comment通用，Comment并不直接保存到Topic的关系。这两个表的 Model可以为：
+
+from django.contrib.contenttypes.models import ContentType
+
+class Topic(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    comments = models.GenericRelation(Comment)
+
+class Comment(models.Model):
+    content = models.TextField(default='')
+    content_type = models.ForeignKey(ContentType)
+    object_id = models.IntegerField()
+    content_object = models.GenericForeignKey()
+
+这是两个简化后的Model。这里体现了两种用法。
+
+先 看Comment。Comment中使用GenericForeignKey()来指向其它的Model实例。为了使用它，你还需要在Model中定义 content_type和object_id才可以。其中content_type指向ContentType这个Model。在示例的最上面可以看 出，它是定义在django.contrib.contenttypes.models中的一个Model。是不是感觉麻烦，没办法。想当初我在 Woodlog 中也想实现类似的功能，当时我是使用了一个字符串，包括了Model名和记录的id值，通过'/'来分隔。所以处理时，要每次拆分。比这个还要麻烦。其实 仔细想一想这是没有办法的事。在django中，你如何定位一条记录？一般要三个值：appname, modelname和object_id。在ContentType就是保存了appname和modelname。因此使用 GenericForeignKey你就只要两个值了。但GenericForeignKey本身还是要定义一下的。结果还是三项。使用其实还是挺简单 的。看文档就清楚了。
+
+再看Topic。它定义了一个GenericRelation(Comment)。这样你可以通过 instance.comments.all()来访问instance对应的所有的Comment实例。当然这个定义并不是必须的，如果不定义，你需要 手工去Comment中查找，比如你已经有了一个topic的实例，现在要查找它的回复:
+
+ctype = ContentType.objects.get_for_model(topic)
+Comment.objects.filter(content_type__pk=ctype.id, object_id=topic.id)
+
+同 时在一个Model中可以定义多个GenericForeignKey，因为GenericForeignKey在定义时可以指定 content_type和object_id字段的名字，缺省是这两个，如果指定新的名字，就可以定义新的GenericForeignKey了。如：
+
+    content_type = models.ForeignKey(ContentType, related_name='content_type')
+    object_id = models.IntegerField()
+    content_object = models.GenericForeignKey()
+    own_type = models.ForeignKey(ContentType, related_name='own_type')
+    own_id = models.IntegerField()
+    own_object = models.GenericForeignKey(ct_field='own_type', fk_field='own_id')
+
+使用Generic Relation可能还有一些功能是不够充分的，在 Django 的邮件列表中有人提过。我发现的就是 create_or_get()好象不行。
+
+不管怎么样，如果你想让你的App可以处理不同的Model，如你的App是Tag, Comment等，可以考虑GenericForeignKey和GenericRelation来处理，可以简化你的处理。
+
+ 
+
+简 单得说，ContentType 就是一个 model，也就是一张数据表，其中保存着当前 project 中所有 models 的元数据，具体就是 name、app_label 和 model 三个字段，其中 app_label 和 model 这两个字符串组合起来便可以唯一标识一个 model 。通过调用 django.db.models.get_model(app_label, model) 就可以获得该 model 类。
+
+这样一个奇怪的 model 会有什么用处呢？可以设想一下，如果你需要一个和任意 model 都建立有关系的 model 时，你会怎么做？比如：用户评论！ 假设你的 project 中有电影、有文章、有音乐等等内容，它们分别对应不同的 model ，而用户对它们每一种内容都可以进行评论，那么最简单的做法就是为每一种内容建立相应的评论表，比如：movie_comments, article_comments 等。不过这种做法的弊端是很明显的：首先是增加了 model 的数量也增加了代码的复杂度；而且没有扩展性，增加其他内容的话还需要增加相应的 comments 表；还有就是统计用户所有评论的时候比较麻烦，需要在多个表中进行查询。
+
+要是我们有了一个记录了项目中所有 model 的元数据的表，表中一条记录便对应着一个 model ，那么我们只要通过一个元数据表的 id 和 一个具体数据表中的 id ，便可以找到任何 model 中的任何记录。ContentType 正是这个表（不过有个前提就是：相关 model 的主键类型必须是相同的，使用django默认的主键就ok了）。
+
+有了 ContentType ，我们的用户评论就只需要一个 model 就可以搞定！
+
+下面开始介绍具体做法吧，首先通过执行以下命令
+>django-admin.py startproject ContentType
+创建一个 project。
+然后修改 settings.py ，配置合适的数据库后端。
+然后通过>cd ContentType
+>manage.py startapp contents
+创建一个 app，修改 contents/models.py 如下：
+
+from django.db import models
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey,GenericRelation
+
+
+
+class Comment(models.Model):
+    content_type = models.ForeignKey(ContentType,on_delete=models.CASCADE)
+    object_id = models.IntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+    title = models.CharField(max_length=100)
+
+
+
+class Movie(models.Model):
+    title = models.CharField(max_length=100)
+    comments = GenericRelation(Comment)
+
+    def __str__(self):
+        return self.title
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=100)
+
+
+    def __str__(self):
+        return self.title
+
+
+class Music(models.Model):
+   title = models.CharField(max_length=100)
+
+   def __str__(self):
+       return self.title
+
+
+class Comment(models.Model):
+    content_type = models.ForeignKey(ContentType,on_delete=models.CASCADE)
+    object_id = models.IntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
+    title = models.CharField(max_length=100)
+然后在 settings.py 的 INSTALLED_APPS 中加入：
+"ContentType.contents",
+执行命令:
+
+>manage.py shell
+现在就可以好好地享受享受劳动果实了。
+
+>>> from ContentType.contents.models import *
+>>> a = Article()
+>>> a.title = 'article1'
+>>> a.save()
+>>> m = Movie()
+>>> m.title = 'movie1'
+>>> m.save()
+>>> mu = Music()
+>>> mu.title = 'music1'
+>>> mu.save()
+>>> c = Comment()
+>>> c.content_object = a
+>>> c.title = 'comment1'
+>>> c.save()
+>>> c = Comment()
+>>> c.content_object = m
+>>> c.title = 'comment2'
+>>> c.save()
+>>> c = Comment()
+>>> c.content_object = mu
+>>> c.title = 'comment3'
+>>> c.save()
+>>> for c in Comment.objects.all():
+...   print c.content_type,c.object_id
+...
+article 1
+movie 1
+music 1
+>>> c.content_object.title
+'music1'
+
+
+
+
+
+
+
+
+
