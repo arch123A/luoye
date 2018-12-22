@@ -3,7 +3,24 @@
 import itertools
 import random
 
+#输入数字
+def input_list():
+    while 1:
+        s=input("请输入24点的数字,以空格隔开：")
+        s=s.strip()
+        s=s.replace(" "," ")  #替换掉中文空格
+        s=s.replace("  "," ") #替换两个连续空格
+        a=s.replace(' ','')
+        s.split()
+       
 
+        if not a.isdigit() or len(a)<4 or len(a)>8 or len(s)!=4:
+            print("输入错误，请重新输入！")
+            print('')
+            continue
+        s=[int(i) for i in s]
+        return s
+    
 # 洗牌
 def shuffle(n, m=-1):
     if m == -1: m = n
@@ -17,7 +34,7 @@ def shuffle(n, m=-1):
 
 # 生成4张牌
 def Get4Card():
-    card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10] * 4
+    card = [1, 2, 3, 4, 5, 6, 9, 9, 9, 10, 10, 10, 10] * 4
     cardidxs = shuffle(52, 4)
     return [card[idx] for idx in cardidxs]
 
@@ -62,8 +79,10 @@ def CalcRes(expr, isprint=False):
 
 if __name__ == "__main__":
     #任意出牌，或者算出已经有的数字。
-    card = Get4Card()
-    #card = [9,10,4,8]
+    #card = Get4Card()
+    #card = [9,9,9,9]
+    card=input_list()
+    
     print(card)
     ops = itertools.combinations_with_replacement('+-*/', 3)  # 一个24点的计算公式可以表达成3个操作符的形式
     allexpr = GenAllExpr(card, ops)  # 数和操作符混合，得到所有可能序列
