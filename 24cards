@@ -11,7 +11,7 @@ def input_list():
         s=s.replace(" "," ")  #替换掉中文空格
         s=s.replace("  "," ") #替换两个连续空格
         a=s.replace(' ','')
-        s.split()
+        s=s.split()
        
 
         if not a.isdigit() or len(a)<4 or len(a)>8 or len(s)!=4:
