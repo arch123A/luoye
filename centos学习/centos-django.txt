@@ -1,0 +1,58 @@
+#1
+    yum groupinstall "Development tools"  
+    yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+                    yum -y  install zlib-devel
+                    yum -y  install bzip2-devel
+                    yum -y  install openssl-devel
+                    yum -y  install ncurses-devel
+                    yum -y  install sqlite-devel
+                    yum -y  install readline-devel
+                    yum -y  install tk-devel
+                    yum -y  install gdbm-devel
+                    yum -y  install db4-devel
+                    yum -y  install libpcap-devel
+                    yum -y  install xz-devel
+#2 python 进https://www.python.org/downloads/release/python-367/，然后选择，Gzipped source tarball，得到下载地址：https://www.python.org/ftp/python/3.6.7/Python-3.6.7.tgz
+#解压刚下载的源码包,配置并编译
+    wget https://www.python.org/ftp/python/3.6.7/Python-3.6.7.tgz
+    tar xf Python-3.6.7.tgz
+    cd Python-3.6.7
+    ./configure
+    make && make install
+
+#3、删除库
+    yum groupremove "Development tools"  
+    yum remove zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+ 
+#4、链接python,将/usr/bin/目录下的python文件备份后删除，一定要删！不删会报错
+     mv /usr/bin/python /usr/bin/python.bak
+    #链接到python3.5
+    ln -s /usr/local/bin/python3 /usr/bin/python
+    #这时候再输入python -V试下版本是否是p3，vi /usr/bim/yum，将第一行的python后面加上2.7即可
+    vi /usr/bim/yum
+    vi /usr/libexec/urlgrabber-ext-down
+#5、安装好setuptool
+    yum install setuptool
+        首先安装epel扩展源：
+        　　yum -y install epel-release
+        　　更新完成之后，就可安装pip：
+        　　yum -y install python-pip
+        　　安装完成之后清除cache：
+        　　yum clean all
+
+        #试下安装成功了没有
+    pip3 install django
+    python
+    import django
+    help(django)
+    
+#6 安装安装virtualenv:
+    yum install python-virtualenv
+    创建python虚拟环境：
+    virtualenv dj11（创建了名为env1的虚拟环境）
+    在本地生成了一个名为env1的文件夹
+    启动虚拟环境：
+    cd /root/test/dj1/
+    source bin/activate
+    退出虚拟环境：
+    deactivate
