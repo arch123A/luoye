@@ -1,0 +1,30 @@
+yum 出现错误File "/usr/bin/yum", line 30
+2016年12月18日 18:02:01 carson 阅读数：3658
+版权声明：本文为博主原创文章，未经博主允许不得转载。	https://blog.csdn.net/a454213722/article/details/53728814
+今天用yum在安装ansible的时候,提示有错误
+
+"/usr/bin/yum", line 30
+
+百度一下原因 这是因为yum采用python作为命令解释器，这可以从/usr/bin/yum文件中第一行
+
+#!/usr/bin/python
+发现。而python版本之间兼容性不太好，使得2.X版本与3.0版本之间存在语法不一致问题。
+而CentOS 5自带的yum采用的是python2.6，当系统将python升级到3.0后，出现语法解释错误，最主要是之前我升级了python
+
+2种解决方法
+第一种
+修改yum的解释器为旧版本python2.6
+
+vi /usr/bin/yum
+把
+
+#!/usr/bin/python
+修改成
+#!/usr/bin/python2
+之前我没有把python2.6的版本删除，所以可以这么操作
+
+第二种升级yum
+
+
+QQ交流群：136351212
+查看原文：https://www.phpsong.com/2612.html

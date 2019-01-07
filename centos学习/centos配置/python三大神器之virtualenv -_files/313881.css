@@ -1,0 +1,40 @@
+#rightmenu {
+    position: absolute;
+    width: 250px;
+    background-color: #fff;
+    left: 5px;
+    top: 60px;
+}
+
+.notice{
+    border:2px dashed lightblue;
+    background-color: lightblue;
+
+
+
+
+}
+.indexside {
+     border:2px inset #d1d1d1;
+
+}
+.r-side{
+    margin:2px;
+}
+.notice p {
+    text-indent:1em;
+    margin: 5px;
+    font-size: 16px;
+    color: #ff9310;
+    font-weight: bold;
+}
+#go_top {
+    float:right;
+    position:fixed;
+    bottom:30px;
+    right:20px;
+  
+    display: none;
+
+}
+<link type="text/css" rel="stylesheet" href="//bootswatch.com/spacelab/bootstrap.min.css"/>
