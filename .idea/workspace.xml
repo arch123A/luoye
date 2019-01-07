@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f25eb56-ba51-48d0-beb6-6a55fce6ec8f" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/python学习/deco2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python学习/decora.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python学习/tcp学习.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,6 +21,7 @@
     <SUITE FILE_PATH="coverage/test$deco2.coverage" NAME="deco2 Coverage Results" MODIFIED="1546602720539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop" />
     <SUITE FILE_PATH="coverage/test$dict1.coverage" NAME="dict1 Coverage Results" MODIFIED="1546608481719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop" />
     <SUITE FILE_PATH="coverage/test$t3_recus.coverage" NAME="t3-recus Coverage Results" MODIFIED="1544710078500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/test$tcp.coverage" NAME="tcp学习 Coverage Results" MODIFIED="1546867232934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python学习" />
     <SUITE FILE_PATH="coverage/test$cj.coverage" NAME="cj Coverage Results" MODIFIED="1546148403144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/test$decora.coverage" NAME="decora Coverage Results" MODIFIED="1546593603748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Desktop" />
     <SUITE FILE_PATH="coverage/test$open_txt.coverage" NAME="open_txt Coverage Results" MODIFIED="1544263639004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -34,8 +34,8 @@
       <file leaf-file-name="pc3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python学习/pc3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+            <state relative-caret-position="171">
+              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -43,11 +43,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pycharm快捷键" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/python学习/pycharm快捷键">
+      <file leaf-file-name="tcp学习.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python学习/tcp学习.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-95">
-              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="369">
+              <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="udp发送数据.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python学习/udp发送数据.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -87,6 +96,7 @@
         <option value="$USER_HOME$/Desktop/成绩判断.py" />
         <option value="$PROJECT_DIR$/send.py" />
         <option value="$PROJECT_DIR$/tele.py" />
+        <option value="$PROJECT_DIR$/python学习/tcp学习.py" />
       </list>
     </option>
   </component>
@@ -100,10 +110,13 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1218" />
-    <option name="y" value="14" />
+    <option name="x" value="60" />
+    <option name="y" value="42" />
     <option name="width" value="1478" />
     <option name="height" value="1664" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -120,7 +133,7 @@
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="Tony_study" type="462c0819:PsiDirectoryNode" />
+              <item name="python学习" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -153,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tele">
+  <component name="RunManager" selected="Python.tcp学习">
     <configuration name="成绩判断" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -168,25 +181,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/成绩判断.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="dict1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="test" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Desktop" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$USER_HOME$/Desktop/dict1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -230,6 +224,25 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="tcp学习" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="test" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python学习" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python学习/tcp学习.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="tele" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="test" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -250,19 +263,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list>
-      <item itemvalue="Python.dict1" />
       <item itemvalue="Python.if学习" />
       <item itemvalue="Python.成绩判断" />
       <item itemvalue="Python.tele" />
       <item itemvalue="Python.send" />
+      <item itemvalue="Python.tcp学习" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tcp学习" />
         <item itemvalue="Python.tele" />
         <item itemvalue="Python.send" />
         <item itemvalue="Python.成绩判断" />
         <item itemvalue="Python.if学习" />
-        <item itemvalue="Python.dict1" />
       </list>
     </recent_temporary>
   </component>
@@ -277,6 +290,14 @@
       <option name="presentableId" value="Default" />
       <updated>1544250300893</updated>
     </task>
+    <task id="LOCAL-00001" summary="装饰器文件">
+      <created>1546856793870</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1546856793870</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -287,10 +308,10 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5025604" side_tool="true" weight="0.32862645" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Python Console" order="12" visible="true" weight="0.3986207" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49817118" weight="0.26339287" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.43005952" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49817118" weight="0.24413793" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32886904" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.31368104" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.31277534" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="4" weight="0.32955405" />
@@ -313,6 +334,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="装饰器文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="装饰器文件" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -325,9 +350,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/t3-recus.py" />
-    <entry file="file://$PROJECT_DIR$/aaa.py" />
-    <entry file="file://$PROJECT_DIR$/open_txt.py" />
     <entry file="file://$PROJECT_DIR$/t2.py" />
     <entry file="file://$PROJECT_DIR$/t3-recus.py" />
     <entry file="file://$PROJECT_DIR$/open_txt.py" />
@@ -410,20 +432,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/python学习/pycharm快捷键">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-95">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/python学习/pc3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        <state relative-caret-position="171">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python学习/pycharm快捷键">
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-1606214573/_socket.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="203">
+          <caret line="586" column="8" selection-start-line="586" selection-start-column="8" selection-end-line="586" selection-end-column="8" />
+          <folding>
+            <element signature="e#17125#17494#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python学习/udp发送数据.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python学习/tcp学习.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
         </state>
       </provider>
     </entry>
