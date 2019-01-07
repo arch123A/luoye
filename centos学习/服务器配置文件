@@ -1,0 +1,87 @@
+cd /root && export WORKON_HOME=~/Envs
+
+source /usr/local/bin/virtualenvwrapper.sh
+
+workon dj1 && cd /home/music
+
+uwsgi --ini music_uwsgi.ini && nginx
+
+
+
+共uwsgi --http 47.104.170.140:8080 --wsgi-file uwsgi_test.py
+
+http://47.104.170.140
+
+常用目录：
+
+/home/music
+
+/etc/nginx
+
+
+
+export WORKON_HOME=~/Envs && source /usr/local/bin/virtualenvwrapper.sh
+
+
+
+
+
+
+
+export WORKON_HOME=~/Envs #设置环境变量
+
+mkdir -p $WORKON_HOME #创建虚拟环境管理目录
+
+find / -name virtualenvwrapper.sh #找到virtualenvwrapper.sh的路径
+
+source 路径 #激活virtualenvwrapper.sh
+
+
+
+
+
+cd /usr/local/nginx/sbin
+
+启动：./nginx
+
+ 停止：./nginx -s stop
+
+cd /root && export WORKON_HOME=~/Envs
+
+source /usr/local/bin/virtualenvwrapper.sh
+
+workon dj1 && cd /home/music
+
+uwsgi --ini music_uwsgi.ini && nginx
+
+
+
+
+
+export WORKON_HOME=~/Envs
+
+source /usr/local/bin/virtualenvwrapper.sh
+
+workon dj1
+
+python /home/music/manage.py collectstatic
+
+python /home/music/manage.py runserver 0:80
+
+
+
+netstart -ntlp|grep 80  
+
+查看端口品号占用情况
+
+
+
+Django2.0+CentOS7.2+Nginx+uwsgi部署过程
+https://www.jianshu.com/p/ad2731c2dce4
+
+
+
+强力结束进程： kill -9 进程号
+
+
+
