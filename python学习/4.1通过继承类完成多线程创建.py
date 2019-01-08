@@ -4,7 +4,7 @@ import threading
 class A(threading.Thread):
 
     def __init__(self,name, *args, **kwargs):
-        super(A, self).__init__(*args, **kwargs )
+        super().__init__(*args, **kwargs )
         self.name = name
 
     def run(self):
