@@ -1,0 +1,77 @@
+1.setting设置
+
+
+#配置APPS
+INSTALLED_APPS = [
+   'article',
+    'ckeditor',
+    'ckeditor_uploader',
+]
+#配置语言
+LANGUAGE_CODE = 'zh-hans'
+#配置ck_editor
+CKEDITOR_JQUERY_URL ='https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_CONFIGS = {
+    'default': {},
+    'awesome_ckeditor': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
+
+# specify media root for user uploaded files, i.e, upload_to filed for ImageField or FileField.
+#配置media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+2.MODEL文件设置
+
+# from ckeditor_uploader.fields import RichTextUploadingFormField
+from ckeditor.fields import RichTextField
+#模型字段设置
+body= RichTextField()
+
+3.url文件设置（主站的url.py)
+
+from django.urls import path,include
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+   
+    path('article/', include('article.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+
+
+]
+# urlpatterns +=static('/media/',document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+4.form文件设置
+from ckeditor.widgets import CKEditorWidget
+
+class Commemt_form ( Form ):
+    text= forms.CharField(max_length=500,widget=CKEditorWidget(config_name='awesome_ckeditor',attrs={'class': 'form-control','placeholder': '评论',}))
+	
+5.模板文件设置
+
+#头文件设置
+{% load static %}
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+#加SAFE过滤
+{{ pp.body|safe }}
+
+
