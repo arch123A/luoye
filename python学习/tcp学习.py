@@ -15,6 +15,7 @@ def send_to_server():
     tcp_socket.close()
 
 def serve():
+    """服务器端"""
     tcp_serve_socket=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     tcp_serve_socket.bind(("",9990))
     tcp_serve_socket.listen(100)
