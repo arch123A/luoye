@@ -1,0 +1,98 @@
+mysql service start
+mysql service stop
+mysql service restart
+--为注释
+
+mysql -u root -p 登陆
+
+
+exit或者quit退出登陆 ctrl+d
+ps -aux | grep  "mysql" 查看MYSQL进程
+
+--SQL里不分大小写
+show databases;--显示数据库
+select now();--显示当前时间
+select version();--显示当前版本
+create database XX;--创建数据库
+show create database mm;--显示创建数据库结果；
+show create table XX;--显示创建数据库表格的结果；
+create database mm3 charset=utf8 --创建UTF8数据库
+drop database XX;--删除数据库
+select database();--查询当前使用的数据库
+show tables --显示表格
+create table XX --创建表格
+create table XX (id int primary key auto_increment,name varchar(30)) --创建一个表格
+
+select s.name,s.id from students as s ;--姓名查询
+select students.name,students.id from students;--姓名查询
+select * from t1 --显示表格内容；
+select * from students where id <3;--查找ID小于3的内容
+select name2 as 姓名, age, gender from students; --查询姓名，年龄
+select distinct gender from students; --清除重复值
+select  * from students age>18 and age <50;--18到50的所有人
+select  * from students age>18  or name="sbssdds";--或者18或者或者年龄的所有人
+and or not  --逻辑语句
+like (模糊查询)
+%替换一个或者多个字符，_替换一个字符
+rlike 正则表达式
+select * from students where name2 like "李%";
+select * from students where name2 rlike "^李.*$" --使用正则表达式查询
+
+
+insert into students values 
+	(0,"李小小",82,2,"2000-01-02",1),
+	(0,"王木",43,2,"2012-2-2",0);
+
+select name age from students where age in (18,20,21);
+select name age from students where age not in (18,20,21);
+select name age from students where age between 18 and 34;
+is null 
+is not null
+
+select * from students where is_delete is null --查询为空的字段
+select * from students where is_delete is not null --查询不为空的字段
+
+delete from students where id=2;
+alter table students add is_delete bit default 0;
+
+desc xx 查询表格结构
+
+##创建一个数据表格
+create table students(
+id int unsigned not null auto_increment primary key ,
+name varchar(30),
+age tinyint,
+high decimal(5,2),
+gender enum("男","女") default "男",
+cls_id int unsigned
+);
+
+create table classes(
+id int unsigned not null primary key auto_increment,
+name varchar(20)
+);
+
+###修改表格
+
+insert into classes values(1,"dssdsd"); 表格中插入内容
+insert into students (name,gender) values("name1","男");表格内容的部分插入。
+insert into students (name,gender) values("name1","男");,("name2",2);同时插入多行的内容。
+alter table students add birthday date not null;表格中增加字段
+alter table students change name  name2 varchar(40); 表格中修改字段
+alter table students drop cls_id;在表格中删除字段。
+update students set age=66 where id=2;修改表格内容
+update students set age=77,gender=1 where id=5;
+--修改字段的默认值
+alter table 表名 alter column 字段名 drop default; (若本身存在默认值，则先删除)
+alter table 表名 alter column 字段名 set default 默认值;(若本身不存在则可以直接设定)
+
+drop table XX；删除表格
+drop database XX; 删除数据库
+
+
+--排序
+--order by
+-- asc 从小到大
+-- desc 从大到小
+select * from students where age between 18 and 34 and gender=2 order by age desc;
+查询年龄段的女性 按年龄从大到小排序
