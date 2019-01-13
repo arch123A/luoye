@@ -27,7 +27,7 @@ select s.name,s.id from students as s ;--姓名查询
 select students.name,students.id from students;--姓名查询
 select * from t1 --显示表格内容；
 select * from students where id <3;--查找ID小于3的内容
-select name2 as 姓名, age, gender from students; --查询姓名，年龄
+select name as 姓名, age, gender from students; --查询姓名，年龄
 select distinct gender from students; --清除重复值
 select  * from students age>18 and age <50;--18到50的所有人
 select  * from students age>18  or name="sbssdds";--或者18或者或者年龄的所有人
@@ -80,11 +80,15 @@ insert into students (name,gender) values("name1","男");,("name2",2);同时插�
 alter table students add birthday date not null;表格中增加字段
 alter table students change name  name2 varchar(40); 表格中修改字段
 alter table students drop cls_id;在表格中删除字段。
+alter table students change heigh heigh decimal(5,2); --修改字段类型
+
 update students set age=66 where id=2;修改表格内容
 update students set age=77,gender=1 where id=5;
 --修改字段的默认值
 alter table 表名 alter column 字段名 drop default; (若本身存在默认值，则先删除)
-alter table 表名 alter column 字段名 set default 默认值;(若本身不存在则可以直接设定)
+alter table 表名 alter csolumn 字段名 set default 默认值;(若本身不存在则可以直接设定)
+alter table students alter column class_id set default 1;
+
 
 drop table XX；删除表格
 drop database XX; 删除数据库
@@ -94,5 +98,42 @@ drop database XX; 删除数据库
 --order by
 -- asc 从小到大
 -- desc 从大到小
-select * from students where age between 18 and 34 and gender=2 order by age desc;
-查询年龄段的女性 按年龄从大到小排序
+select * from students where age between 18 and 34 and gender=2 order by age desc，id asc;
+-- 查询年龄段的女性 按年龄从大到小排序,相同年龄按ID
+
+-- 聚合函数
+-- 有count,max,min,avg,sum，round(12.23,1)四舍五入
+select count(*)  from students where gender=1; --统计男性个数
+select count(*)  from students where gender=1; --统计女性个数
+select max(age) from students; --统计年龄最大的人
+select sum(age) from students;--计算所有人的年龄总和
+select avg(age) from students;--计算所有人的平均年龄
+select sum(age)/count(*) from students;--计算所有人的平均年龄
+select round(avg(age),2) from students;--小数点后保留两位。并且已经四舍五入了。如果要精确不要小数点，而是给他乘上千或者万倍做整数运算。
+-- 整数没有误差，小数有误差。
+
+-- 分组（一般和聚合一起用）
+select gender,count(*) from students group by gender;--统计男女分别多少人。
+select gender,avg(age) as 平均年龄 from students group by gender;--统计男女平均年龄。
+select gender,group_concat(name,age) from students group by gender;--查看每一级分别有哪些人。
+select gender,group_concat(name,age) from students where gender=1 group by gender;--只查看男性分组的姓名和年龄。
+select gender,group_concat(name,",",age) from students group by gender having count	(*)>2;--having是对分组后的数据进行分类。
+--where 是对原因数据进行过滤。
+-- limit 2,只显示两条数据
+-- limit 6,2   从第七条开始，显示2条数据。
+--对数据进行过滤时，where>order by >limit
+select * from students where gender=1 order by age limit 2,3;--从第三条开始每页显示三条，按年龄排序，性别为男。
+select * from students where gender=2 order by heigh limit 2,3;
+
+-- 导入数据库文件内容
+1.从数据库文件的目录下登陆 mysql -u root -p
+2.source *.sql
+
+
+--表格的内联（自关联查询）
+select p.area_name ,c.area_name from dt_area as p inner join 
+dt_area as c on c.area_parent_id=p.id having p.area_name="安徽省";
+
+--子查询
+select * from dt_area where area_parent_id=(select id from dt_area where area_name="安庆市");
+select * from students where heigh=(select max(heigh) from students);

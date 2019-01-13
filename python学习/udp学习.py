@@ -12,7 +12,7 @@ def recv(udp_socket):
 def send(udp_socket):
     print("开始发送消息…………")
     data_send=input("请输入发送的内容：")
-    udp_socket.sendto(data_send.encode('gbk'),("127.0.0.1",10000))
+
 
 def main():
     udp_socket=socket.socket(socket.AF_INET,socket.SOCK_DGRAM)

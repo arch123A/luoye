@@ -18,9 +18,9 @@
 #         j=j+1
 
 
-
+# define function
 def jt(head,foot):
-    for j in range(1,head+1):
+    for j in range(0,head+1):
         t=head-j  # t是兔子的数量
         if j*2+4*t==foot:
             print("鸡有%d只，兔子有%d只！"%(j,t))
@@ -31,7 +31,7 @@ def jt(head,foot):
 
 
 
-jt(12,34)
+jt(18,60)
 
 
 
