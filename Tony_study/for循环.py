@@ -18,20 +18,25 @@
 #         j=j+1
 
 
-# define function
-def jt(head,foot):
-    for j in range(0,head+1):
-        t=head-j  # t是兔子的数量
-        if j*2+4*t==foot:
-            print("鸡有%d只，兔子有%d只！"%(j,t))
-            break
-    else:
-        print("这道题没有答案")
+# # define function
+# def jt(head,foot):
+#     for j in range(0,head+1):
+#         t=head-j  # t是兔子的数量
+#         if j*2+4*t==foot:
+#             print("鸡有%d只，兔子有%d只！"%(j,t))
+#             break
+#     else:
+#         print("这道题没有答案")
+#
+#
+#
+#
+# jt(18,60)
 
 
+for i in range(100,-1,-2):
+    print(i,end="@")
 
-
-jt(18,60)
 
 
 
