@@ -42,7 +42,7 @@ a="""1.马渝越
 b=a.splitlines()
 c=",你真棒！"
 for i in b:
-    print(i,c)
+    print(i)
 # for i in c:
 #     print(i,end="=")
 

@@ -141,3 +141,7 @@ select * from students where heigh=(select max(heigh) from students);
 
 --大于平均价格的物品
 select * from goods where price>(select avg(price) from goods);
+select name,price,id from goods inner join (select cate_name,max(price) as max_price,avg(price),count(*) from goods group by cate_name)
+as goods_new_info on goods.cate_name=goods_new_info.cate_name and goods.price=goods_new_info.max_price;
+--查询每种类型中最贵的电脑信息
+

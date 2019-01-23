@@ -1,3 +1,5 @@
+import time
+import re
 # import socket
 # #
 # #
@@ -32,20 +34,42 @@
 # # if __name__ == "__main__":
 # #     main()
 
-
+#
 def login():
-    b="登陆界面"
+    b="登陆界面"+time.ctime()
     return b
 
 def register():
-    b="注册界面"
+    b="注册界面"+time.ctime()
     return b
 
 def quit():
-    b="退出登陆"
+    b="退出登陆"+time.ctime()
     return b
+#
+# def application(file_name):
+#     pattern=re.compile(r"^(.*)\.py")
+#     m=pattern.search(file_name)
+#     if m:
+#         file_name=m.group(1)
+#     print(file_name)
+#     if file_name=="/login":
+#         return login()
+#     elif file_name=="/register":
+#         return register()
+#     elif file_name=="/quit":
+#         return quit()
+#     else:
+#         return "输入错误！"
 
-def application(file_name):
+def application(environ,start_response):
+    start_response("200 ok", [(r'Content-Type',r'text/html;charset=utf-8')])
+    file_name=environ['path']
+    pattern = re.compile ( r"^(.*)\.py" )
+    m=pattern.search(file_name)
+    if m:
+        file_name=m.group(1)
+    print(file_name)
     if file_name=="/login":
         return login()
     elif file_name=="/register":
@@ -54,4 +78,4 @@ def application(file_name):
         return quit()
     else:
         return "输入错误！"
-
+    return "Hello,world!中文"

@@ -26,8 +26,7 @@ class WSGI_server():
         print ( ">" * 30 )
         head_error = "HTTP/1.1 404 OK\r\n"
         head_error += "\r\n"
-        head= "HTTP/1.1 200 OK\r\n"
-        head += "\r\n"  # head为头文件
+        file_name=""
     
         if request:
             request_line = request.splitlines ()[0]
@@ -38,7 +37,6 @@ class WSGI_server():
                 file_name = res.group (1)
                 print ( file_name )
         if file_name == "/":
-
             file_name = "/index.html"
 
         if not file_name .endswith(".py"):
@@ -48,19 +46,33 @@ class WSGI_server():
             except Exception as ret:
                 print ( ret )
                 print ( type ( ret ) )
-
-                new_client_socket.send ( head_error.encode ( "utf-8" ) )
+                head2="HTTP/1.1 200 OK\r\n"
+                head2+="\r\n"
+                new_client_socket.send (head2.encode ( "utf-8" ) )
                 new_client_socket.send ( str ( ret ).encode ( "utf-8" ) )
                 # new_client_socket.send ( "file not fount".encode ( "utf-8" ) )
 
             else:
-                new_client_socket.send ( head.encode ( "utf-8" ) )
+                new_client_socket.send ( head_error.encode ( "utf-8" ) )
                 new_client_socket.send ( content )
         else:
-            body=application(file_name)
+            env=dict()
+            env['path']= file_name
+            body=application(env,self.set_response_header)
+            head = "HTTP/1.1 %s\r\n" % self.status
+            for t in self.header:
+                head += "%s:%s\r\n" % (t[0], t[1])
+                print(t)
+            head += "\r\n"  # head为头文件
+            print(">"*10,head)
+            # print(">"*10,self.header,type(self.header))
             response=head+body
             new_client_socket.send ( response.encode("utf-8") )
         new_client_socket.close ()
+
+    def set_response_header(self,status,header):
+        self.status=status
+        self.header=header
 
     def run(self):
         while True:
