@@ -1,3 +1,4 @@
+参考：https://blog.csdn.net/apollo_miracle/article/details/82977069
 以管理员身份运行如下命令：
 
 sudo pip install virtualenv
@@ -80,8 +81,3 @@ pip install 包名称
 # 查看虚拟环境中安装的包：
 pip freeze
 4 HelloWorld程序
---------------------- 
-作者：梦因you而美 
-来源：CSDN 
-原文：https://blog.csdn.net/apollo_miracle/article/details/82977069 
-版权声明：本文为博主原创文章，转载请附上博文链接！
