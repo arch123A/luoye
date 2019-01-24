@@ -1,0 +1,87 @@
+以管理员身份运行如下命令：
+
+sudo pip install virtualenv
+2.以管理员身份执行如下命令：
+sudo pip install virtualenvwrapper
+3.执行命令：mkvirtualenv  提示未找到命令，进入第4步
+4.在Home家目录执行如下指令：mkdir .virtualenvs
+创建好之后去修改.bashrc文件:vim .bashrc
+在最后添加如下配置代码，如下图所示：
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=$HOME/.virtualenvs
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    source /usr/local/bin/virtualenvwrapper.sh
+ 
+fi
+
+
+然后重新载入，执行：source .bashrc
+
+
+
+那么将来创建的虚拟环境默认都是Python3了
+
+3.3 测试创建虚拟环境：
+默认就是创建的Python3的虚拟环境：mkvirtualenv py3_flask
+
+
+
+也可以通过-p指定Python版本：mkvirtualenv -p python3 py3_flask2
+
+
+
+如果想创建Python2版本的环境，使用如下命令：
+
+
+
+执行workon命令敲回车，就可以看到所有的虚拟环境了
+
+
+
+进入到某一个环境，执行命令：workon py3_flask就选中了当前的这个虚拟环境
+
+
+
+安装flask,先选中虚拟环境，然后执行如下命令:pip install flask==0.10.1命令
+
+
+
+查看虚拟环境中安装的包： pip freeze
+
+
+
+使用虚拟环境总结：
+mkvirtualenv -p python3 py3_flask2
+
+# 创建的Python3的虚拟环境：
+mkvirtualenv py3_flask
+ 
+# 删除虚拟环境的命令 :
+rmvirtualenv 虚拟环境名称
+ 
+# 选中当前的这个虚拟环境：
+workon py3_flask
+ 
+# 安装flask：
+pip install flask==0.10.1
+ 
+# 查看虚拟环境的命令：
+workon 两次tab键
+ 
+# 使用虚拟环境的命令：
+workon 虚拟环境名称
+ 
+# 退出虚拟环境的命令：
+deactivate
+ 
+# python3版本下安装flask-0.10.1的包：
+pip install 包名称
+ 
+# 查看虚拟环境中安装的包：
+pip freeze
+4 HelloWorld程序
+--------------------- 
+作者：梦因you而美 
+来源：CSDN 
+原文：https://blog.csdn.net/apollo_miracle/article/details/82977069 
+版权声明：本文为博主原创文章，转载请附上博文链接！
