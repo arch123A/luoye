@@ -6,6 +6,6 @@ i=1
 while i<=n:
     a.fd(50)
     a.left(360/n)
-    i=i+1
+    i=i+11
     
     
