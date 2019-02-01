@@ -1,0 +1,4 @@
+pycharm的redis插件iedis
+redis的windows的下载地址：https://github.com/MicrosoftArchive/redis/releases
+在cmd下使用命令【redis-server.exe redis.windows.conf】，启动redis 服务。
+【redis-cli】启动客户端
