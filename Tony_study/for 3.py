@@ -1,6 +1,7 @@
-a=[False,1,2,3,4]
-c=['abc',22,33,44,]
-b=[c,a]
-for q in  b:
-    for x in q:
-        print(x)
+i=1
+sum=1
+while i<=10:
+    sum*=i
+    i+=1
+
+print(sum)

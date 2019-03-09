@@ -1,0 +1,159 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'n' ]
+2 info using npm@2.15.1
+3 info using node@v4.4.3
+4 verbose install initial load of C:\Users\Surface\AppData\Roaming\npm\package.json
+5 verbose readDependencies loading dependencies from C:\Users\Surface\AppData\Roaming\npm\package.json
+6 silly cache add args [ 'n', null ]
+7 verbose cache add spec n
+8 silly cache add parsed spec Result {
+8 silly cache add   raw: 'n',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'n',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: 'latest',
+8 silly cache add   type: 'tag' }
+9 silly addNamed n@latest
+10 verbose addNamed "latest" is being treated as a dist-tag for n
+11 info addNameTag [ 'n', 'latest' ]
+12 silly mapToRegistry name n
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry data Result {
+15 silly mapToRegistry   raw: 'n',
+15 silly mapToRegistry   scope: null,
+15 silly mapToRegistry   name: 'n',
+15 silly mapToRegistry   rawSpec: '',
+15 silly mapToRegistry   spec: 'latest',
+15 silly mapToRegistry   type: 'tag' }
+16 silly mapToRegistry uri https://registry.npmjs.org/n
+17 verbose addNameTag registry:https://registry.npmjs.org/n not in flight; fetching
+18 verbose request uri https://registry.npmjs.org/n
+19 verbose request no auth needed
+20 info attempt registry request try #1 at 20:45:10
+21 verbose request id f22ad10e12553cd2
+22 verbose etag W/"794fec4ca3d45c86a55b552d4a0e3ec8"
+23 verbose lastModified Fri, 03 Aug 2018 00:36:01 GMT
+24 http request GET https://registry.npmjs.org/n
+25 info retry will retry, error on last attempt: Error: read ECONNRESET
+26 info attempt registry request try #2 at 20:45:20
+27 verbose etag W/"794fec4ca3d45c86a55b552d4a0e3ec8"
+28 verbose lastModified Fri, 03 Aug 2018 00:36:01 GMT
+29 http request GET https://registry.npmjs.org/n
+30 info retry will retry, error on last attempt: Error: read ECONNRESET
+31 info attempt registry request try #3 at 20:46:21
+32 verbose etag W/"794fec4ca3d45c86a55b552d4a0e3ec8"
+33 verbose lastModified Fri, 03 Aug 2018 00:36:01 GMT
+34 http request GET https://registry.npmjs.org/n
+35 http 304 https://registry.npmjs.org/n
+36 verbose headers { date: 'Wed, 06 Mar 2019 12:46:22 GMT',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'set-cookie': [ '__cfduid=da81a460b0e267087c3e63c2490392f361551876382; expires=Thu, 05-Mar-20 12:46:22 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+36 verbose headers   'cf-cache-status': 'HIT',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'cf-ray': '4b346e9ccfed6c16-SJC',
+36 verbose headers   etag: '"794fec4ca3d45c86a55b552d4a0e3ec8"',
+36 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+36 verbose headers   'last-modified': 'Fri, 03 Aug 2018 00:36:01 GMT',
+36 verbose headers   vary: 'accept-encoding, accept',
+36 verbose headers   server: 'cloudflare' }
+37 silly get cb [ 304,
+37 silly get   { date: 'Wed, 06 Mar 2019 12:46:22 GMT',
+37 silly get     connection: 'keep-alive',
+37 silly get     'set-cookie': [ '__cfduid=da81a460b0e267087c3e63c2490392f361551876382; expires=Thu, 05-Mar-20 12:46:22 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+37 silly get     'cf-cache-status': 'HIT',
+37 silly get     'cache-control': 'max-age=300',
+37 silly get     'cf-ray': '4b346e9ccfed6c16-SJC',
+37 silly get     etag: '"794fec4ca3d45c86a55b552d4a0e3ec8"',
+37 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+37 silly get     'last-modified': 'Fri, 03 Aug 2018 00:36:01 GMT',
+37 silly get     vary: 'accept-encoding, accept',
+37 silly get     server: 'cloudflare' } ]
+38 verbose etag https://registry.npmjs.org/n from cache
+39 verbose get saving n to C:\Users\Surface\AppData\Roaming\npm-cache\registry.npmjs.org\n\.cache.json
+40 verbose correctMkdir C:\Users\Surface\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+41 silly addNameTag next cb for n with tag latest
+42 silly addNamed n@2.1.12
+43 verbose addNamed "2.1.12" is a plain semver version for n
+44 silly cache afterAdd n@2.1.12
+45 verbose afterAdd C:\Users\Surface\AppData\Roaming\npm-cache\n\2.1.12\package\package.json not in flight; writing
+46 verbose correctMkdir C:\Users\Surface\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+47 verbose afterAdd C:\Users\Surface\AppData\Roaming\npm-cache\n\2.1.12\package\package.json written
+48 silly install resolved [ { name: 'n',
+48 silly install resolved     description: 'Interactively Manage All Your Node Versions',
+48 silly install resolved     version: '2.1.12',
+48 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@vision-media.ca' },
+48 silly install resolved     homepage: 'https://github.com/tj/n',
+48 silly install resolved     bugs: { url: 'https://github.com/tj/n/issues' },
+48 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+48 silly install resolved     keywords:
+48 silly install resolved      [ 'nvm',
+48 silly install resolved        'node',
+48 silly install resolved        'version',
+48 silly install resolved        'manager',
+48 silly install resolved        'switcher',
+48 silly install resolved        'node',
+48 silly install resolved        'binary',
+48 silly install resolved        'env' ],
+48 silly install resolved     bin: { n: './bin/n' },
+48 silly install resolved     repository: { type: 'git', url: 'git://github.com/tj/n.git' },
+48 silly install resolved     preferGlobal: true,
+48 silly install resolved     os: [ '!win32' ],
+48 silly install resolved     engines: { node: '*' },
+48 silly install resolved     license: 'MIT',
+48 silly install resolved     gitHead: '8ad6cd3bc76fc674f7faf3d8cf2f4d6e7d1849c3',
+48 silly install resolved     _id: 'n@2.1.12',
+48 silly install resolved     _npmVersion: '6.0.1',
+48 silly install resolved     _nodeVersion: '8.11.2',
+48 silly install resolved     _npmUser: { name: 'troy0820', email: 'troy0820@gmail.com' },
+48 silly install resolved     dist:
+48 silly install resolved      { integrity: 'sha512-LbdmVo3utWB0njvNAsEHZxMesZmUBOH54VOzGpywqi03huCmi0bsSyigKCLrBxlnvlcz4Nahwt342f6w9YU3Cg==',
+48 silly install resolved        shasum: '7bca5e103bfe3632d4c1a70dfaf9ecf774c18aed',
+48 silly install resolved        tarball: 'https://registry.npmjs.org/n/-/n-2.1.12.tgz',
+48 silly install resolved        fileCount: 7,
+48 silly install resolved        unpackedSize: 30247,
+48 silly install resolved        'npm-signature': '-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbHrp7CRA9TVsSAnZWagAAB1sP/3rWkLGMALGKzwjTPOKg\nVTqCSUL3Az1ihVlgplTvMLauz3xNo7eu6NfDDWotQGm2S/CYT4s5cC++xK/r\nF92PvMFIdnI+YSHZTdLvZpryOvyhHMh5NYM3ARhIt3YIC7nOkTVFVa1XkuUI\n0sp+vmIZrUZvzIEihVwHVxb5INxZVMh8NB6WZxVstRNmOl0/SgnSK2NLM1qy\nr7pgMjJWICF42ltXwVlRKaqCKeRpNJAvSMxBHaDFbKgmoXd37d7BsDc/qv0+\nQJZ2oHyKInimnUxKfY6pw702SyoQKsZvWflkTlVxjEMOjjRpXRKERFiWrRTH\nxEuQ7Jz7SsMRERJetsTpKPnS+OTyxioXtJmod4+Qy2AV6LS7q+h5NxLEzli8\nLdlbJP0MTJECJryeAl0OJbInoybp3MBmyAZ045TUbqwS/nzQtxNuEAJXHiqK\nYDtoFQjASiAAkjavrdb9yXiuyPPDK4HTvhlD3vTnr29dpxTUSAauvZ+a8E/Z\n+iNRw2NrZuor97NJ9Eltt80GWYgsCNACQGcfYk+7BS7YsAmco/KCSYH7TjVT\nnX7r1FjkHCmLnkkveJvsyEY3E8xTc4/e7YCkJIdXBTNZUgMDUWFqzB8lIA5y\noMIfkxiTchZpY8m6jSmPta/UZU4LyixYnmYslLSNPhj7KSidOtP3peKowy9D\nAW+0\r\n=Tct9\r\n-----END PGP SIGNATURE-----\r\n' },
+48 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+48 silly install resolved     directories: {},
+48 silly install resolved     _npmOperationalInternal:
+48 silly install resolved      { host: 's3://npm-registry-packages',
+48 silly install resolved        tmp: 'tmp/n_2.1.12_1528740474170_0.4363494946487372' },
+48 silly install resolved     _shasum: '7bca5e103bfe3632d4c1a70dfaf9ecf774c18aed',
+48 silly install resolved     _resolved: 'https://registry.npmjs.org/n/-/n-2.1.12.tgz',
+48 silly install resolved     _from: 'n@latest',
+48 silly install resolved     readme: 'ERROR: No README data found!' } ]
+49 info install n@2.1.12 into C:\Users\Surface\AppData\Roaming\npm
+50 info installOne n@2.1.12
+51 verbose installOne of n to C:\Users\Surface\AppData\Roaming\npm not in flight; installing
+52 verbose correctMkdir C:\Users\Surface\AppData\Roaming\npm-cache\_locks correctMkdir not in flight; initializing
+53 verbose lock using C:\Users\Surface\AppData\Roaming\npm-cache\_locks\n-26f3a7b8a4b4c35e.lock for C:\Users\Surface\AppData\Roaming\npm\node_modules\n
+54 verbose unlock done using C:\Users\Surface\AppData\Roaming\npm-cache\_locks\n-26f3a7b8a4b4c35e.lock for C:\Users\Surface\AppData\Roaming\npm\node_modules\n
+55 verbose stack Error: Unsupported
+55 verbose stack     at checkPlatform (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-install-checks\index.js:47:14)
+55 verbose stack     at Array.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+55 verbose stack     at LOOP (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+55 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:18:7
+55 verbose stack     at checkEngine (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-install-checks\index.js:26:10)
+55 verbose stack     at Array.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+55 verbose stack     at LOOP (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+55 verbose stack     at chain (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:20:5)
+55 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:1038:5
+55 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\utils\locker.js:39:7
+56 verbose pkgid n@2.1.12
+57 verbose cwd D:\test\vue
+58 error Windows_NT 10.0.15063
+59 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "n"
+60 error node v4.4.3
+61 error npm  v2.15.1
+62 error code EBADPLATFORM
+63 error notsup Unsupported
+63 error notsup Not compatible with your operating system or architecture: n@2.1.12
+63 error notsup Valid OS:    !win32
+63 error notsup Valid Arch:  any
+63 error notsup Actual OS:   win32
+63 error notsup Actual Arch: x64
+64 verbose exit [ 1, true ]
