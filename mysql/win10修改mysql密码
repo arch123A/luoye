@@ -1,0 +1,12 @@
+终于解决我的问题的方法：
+①首先要使用“临时密码”进入mysql数据库：
+
+在mysql安装目录生成的data文件下，查找xxx.err的文件如图：
+用记事本打开err文件
+可以看到临时密码：<a5F34))PqMb
+使用cmd命令行工具，用临时密码登录，进行修改密码
+命令：mysql -u root -p
+②在命令行窗口改密码：
+alter user 'root'@'localhost' identified by 'youpassword'; 
+③检验看看是否可用了
+show databases;
