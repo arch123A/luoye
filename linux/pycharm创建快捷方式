@@ -1,0 +1,20 @@
+创建快捷方式
+
+1）在/usr/share/applications创建一个文件：pycharm.desktop（touch，gedit，nano指令等）
+
+    cd /usr/share/applications
+    sudo gedit pycharm.desktop
+
+2）编辑这个文件，添加以下内容
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pycharm
+Icon=/home/mengdan/Downloads/pycharm-2018.2.1/bin/pycharm.png
+Exec=sh /home/mengdan/Downloads/pycharm-2018.2.1/bin/pycharm.sh
+MimeType=application/x-py;
+Name[en_US]=pycharm
+
+pycharm具体安装方法：
+https://blog.csdn.net/qq_15192373/article/details/81091278
