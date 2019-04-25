@@ -1,1 +1,5 @@
 https://www.linuxidc.com/Linux/2018-05/152253.htm
+
+出现错误：Failed to start mongod.service: Unit mongod.service not found
+
+https://stackoverflow.com/questions/48092353/failed-to-start-mongod-service-unit-mongod-service-not-found
