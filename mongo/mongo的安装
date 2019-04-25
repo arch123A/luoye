@@ -3,3 +3,15 @@ https://www.linuxidc.com/Linux/2018-05/152253.htm
 出现错误：Failed to start mongod.service: Unit mongod.service not found
 
 https://stackoverflow.com/questions/48092353/failed-to-start-mongod-service-unit-mongod-service-not-found
+
+
+
+官网安装步骤：https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/　(强烈推荐)
+
+如看不懂请参考：https://www.jianshu.com/p/f0952b4118ec
+
+但是在启动DB时，即 sudo service mongod start，会出现错误：Failed to start mongod.service: Unit mongod.service not found.
+
+解决方法（链接：https://stackoverflow.com/questions/48092353/failed-to-start-mongod-service-unit-mongod-service-not-found）：
+命令行输入：sudo systemctl unmask mongodb
+sudo service mongod start
