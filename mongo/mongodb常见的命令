@@ -1,0 +1,434 @@
+show dbs;                  #查看全部数据库
+
+show collections;          #显示当前数据库中的集合（类似关系数据库中的表）
+
+show users;                #查看当前数据库的用户信息
+
+use <db name>;             #切换数据库跟mysql一样
+
+db;或者db.getName();        #查看当前所在数据库
+
+db.help();                 #显示数据库操作命令，里面有很多的命令 
+db.foo.help();             #显示集合操作命令，同样有很多的命令，foo指的是当前数据库下，一个叫foo的集合，并非真正意义上的命令 
+db.foo.find();             #对于当前数据库中的foo集合进行数据查找（由于没有条件，会列出所有数据） 
+db.foo.find( { a : 1 } );  #对于当前数据库中的foo集合进行查找，条件是数据中有一个属性叫a，且a的值为1
+
+
+数据库命名规则
+* 1:不能是空串。
+
+* 2:不得含有/、\、?、$、空格、空字符等等,基本只能使用ASCII中的字母和数字 。
+
+* 3:区分大小写,建议全部小写。
+
+* 4:最多为64字节。
+
+* 5:不得使用保留的数据库名,比如:admin,local,config 
+
+注意:数据库最终会成为文件,数据库名就是文件的名称
+mongoDB 数据库概念
+MongoDB的一个实例可以拥有一个或多个相互独立的数据库，每个数据库都有自己的集合。
+1
+集合
+集合可以看作是拥有动态模式的表。
+1
+文档
+文档是MongoDB中基本的数据单元，类似关系型数据库表的行。
+文档是键值对的一个有序集合。
+1
+2
+_id
+每个文档都有个特殊的"_id",在文档所属集合中是唯一的。
+1
+mongo命令 链接MongoDB 数据库时 会进入 javascript shell
+MongoDB自带了一个功能强大的JavaScript Shell,可以用于管理或操作MongoDB。
+1
+数据库命名规则
+* 1:不能是空串。
+
+* 2:不得含有/、\、?、$、空格、空字符等等,基本只能使用ASCII中的字母和数字 。
+
+* 3:区分大小写,建议全部小写。
+
+* 4:最多为64字节。
+
+* 5:不得使用保留的数据库名,比如:admin,local,config 
+
+注意:数据库最终会成为文件,数据库名就是文件的名称。
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+集合名称定义规则
+1: 不能是空串。
+
+2: 不能包含\0字符(空字符),这个字符表示集合名的结束,也不能包含”$”。
+
+3: 不能以”system.”开头,这是为系统集合保留的前缀
+
+文档的key定义规则
+* 1: 不能包含\0字符(空字符),这个字符表示键的结束。
+* 2: “.”和“$”是被保留的,只能在特定环境下用。
+* 3: 区分类型,同时也区分大小写。
+* 4: 键不能重复
+
+注意:文档的键值对是有顺序的,相同的键值对如果有不同顺序的话,也是不同的文档。
+1
+2
+3
+4
+5
+6
+数据库操作
+显示现有的数据库。
+
+    show dbs
+
+    leyue   0.078GB
+    local   0.078GB
+    mongo   0.078GB
+    mycol   0.078GB
+    mydb    0.078GB
+    testdb  0.078GB
+1
+2
+3
+4
+5
+6
+7
+8
+显示当前使用的数据。
+
+
+    db
+1
+2
+切换当前使用的数据库。
+
+    use leyue
+1
+创建数据库
+
+    use 数据库名称
+    db.集合名称.insert({"name":"wang wu"})
+
+    创建数据库:MongoDB没有专门创建数据库的语句,可以使用“use” 来使用某个数据库,如果要使用
+的数据库不存在,那么将会创建一个,会在真正向该库加入文档后,保存成为文件。
+
+删除数据库
+
+    use 数据库名称
+    db.dropDatabase()
+
+集合的操作
+创建集合
+    创建集合:在MongoDB中不用创建集合,因为没有固定的结构,直接使用db.集合名称.命令 来操作就可
+以了。如果非要显示创建集合的话,用:db.createCollecion(“集合名称”);
+1
+2
+3
+显示现有的集合
+    use leyue
+
+    show collections
+1
+2
+3
+4
+insert 可以插入一个用{} 多条数据用[]
+    db.userdatas.insert([ {"name":'lisan',"age":23},{"name":"wang wu","age":33} ])
+1
+1:MongoDB会为每个没有“_id”字段的文档自动添加一个”_id”字段
+2:每个Doc必须小于16MB
+1
+2
+删除文档 db.集合.remove()
+    db.userdatas.remove({"name":"lisan"})
+1
+查看数据库 文档状态 可以看到文档的个数大小 等等信息
+    数据库： db.stats()
+    文档：db.集合.stats
+    db.stats()
+    {
+        "db" : "leyue",
+        "collections" : 4,
+        "objects" : 418,
+        "avgObjSize" : 110.77511961722487,
+        "dataSize" : 46304,
+        "storageSize" : 192512,
+        "numExtents" : 6,
+        "indexes" : 2,
+        "indexSize" : 32704,
+        "fileSize" : 67108864,
+        "nsSizeMB" : 16,
+        "extentFreeList" : {
+            "num" : 0,
+            "totalSize" : 0
+        },
+        "dataFileVersion" : {
+            "major" : 4,
+            "minor" : 22
+        },
+        "ok" : 1
+    }
+
+    db.userdatas.stats()
+    {
+        "ns" : "leyue.userdatas",
+        "count" : 11,
+        "size" : 1040,
+        "avgObjSize" : 94,
+        "numExtents" : 1,
+        "storageSize" : 8192,
+        "lastExtentSize" : 8192,
+        "paddingFactor" : 1,
+        "paddingFactorNote" : "paddingFactor is unused and unmaintained in 3.0. It  remains hard coded to 1.0 for compatibility only.",
+        "userFlags" : 1,
+        "capped" : false,
+        "nindexes" : 1,
+        "totalIndexSize" : 8176,
+        "indexSizes" : {
+            "_id_" : 8176
+        },
+        "ok" : 1
+    }
+
+查看集合中所有的文档
+    db.集合名称.find();
+    db.userdatas.find()
+    { "_id" : ObjectId("59789a56bc629e73c4f09e1c"), "name" : "wang wu", "age" : 45 }
+    { "_id" : ObjectId("59789a74bc629e73c4f09e1e"), "name" : "wang wu", "age" : 8 }
+    { "_id" : ObjectId("59789ac0bc629e73c4f09e20"), "name" : "wang wu", "age" : 33 }
+    { "_id" : ObjectId("597f357a09c84cf58880e40e"), "name" : "u1", "age" : 37 }
+1
+2
+3
+4
+5
+6
+文档替换 db.集合名称.update(条件,新的文档);只会修改符合条件的第一个文档。
+db.test.update({"age":12},{"address":"北京","name":"老王"})
+1
+$set :指定一个字段的值,如果字段不存在,会创建一个.
+db.test.update({"name":"u1"},{"$set":{"name":"u2"}},0,1)
+1
+$unset :删掉某个字段
+db.test.update({"name":"u1"},{"$unset":{"address":1}},0,1)
+1
+$push:向已有数组的末尾加入一个元素,要是没有就新建一个数组。
+db.test.update({"name":"u1"},{"$push":{"score":2}},0,1)
+1
+each:通过一次each:通过一次push来操作多个值
+db.test.update({"name":"u1"},{"$push":{"score":{"$each":[4,5,6]}}})
+1
+save方法
+如果文档存在就更新,不存在就新建,主要根据”_id”来判断。
+
+    db.test.save({"name":"li si"})
+1
+update
+第三个参数 0 表示查找不到，不增加一个文档 1表示查找不到，增加文档 
+第四个参数 0 表示只更新第一个 1 更新所有查找到的文档 
+1:只能用在$XXX的操作中 
+2:最好每次都显示的指定update的第4个参数,以防止服务器使用默认行为
+
+find
+find(条件,显示的字段)
+db.userdatas.find({},{name:1,_id:0})
+1
+比较操作:lt,lt,lte,gt,gt,gte,$ne
+    db.userdatas.find({age:{$gte:35}})
+    30<=age<=35
+    db.userdatas.find({age:{$lte:35,$gte:30}})
+1
+2
+3
+$and:包含多个条件,他们之间为and的关系
+    db.userdatas.find({"name":"u5",age:{$gt:33}})
+    db.userdatas.find({$and:[{"name":"u5"},{age:{$gt:33}}]})
+1
+2
+$or :包含多个条件,他们之间为or的关系 ,$nor相当于or取反
+     db.userdatas.find({$or:[{"name":"u5"},{age:{$gt:33}}]})
+1
+$not:用作其他条件之上,不能作为顶级查询，后面可跟条件，正则
+    db.userdatas.find({age:{$not:{$lt:35}}})
+    db.userdatas.find({name:{$not:/wang/}})
+1
+2
+3
+$mod:将查询的值除以第一个给定的值,如果余数等于等二个值则匹配成功。
+    db.userdatas.find({age:{$mod:[10,7]}})
+    db.userdatas.find({age:{$not:{$mod:[10,7]}}})
+1
+2
+in:查询一个键的多个值,只要键匹配其中一个即可,in:查询一个键的多个值,只要键匹配其中一个即可,nin为不包含
+    db.userdatas.find({age:{$in:[33,35]}})
+    db.userdatas.find({age:{$nin:[33,35]}})
+1
+2
+$all:键需要匹配所有的值,用于数组
+    db.userdatas.find({score:{$all:[7,4]}})
+1
+$exists:检查某个键是否存在,1表示存在,0表示不存在
+    db.userdatas.find({"score":{$exists:1}})
+1
+null类型:不仅能匹配键的值为null,还匹配键不存在的情况
+    db.userdatas.find({score:null})
+    db.userdatas.find({name:{$in:[null],$exists:1}})   
+1
+2
+正则
+    MongoDB使用Perl兼容的正则表达式(PCRE),
+    比如: db.users.find({“name”:/sishuok/i}); 
+    又比如: db.users.find({“name”:/^sishuok/});
+1
+2
+3
+数组搜索
+单个元素匹配,就跟前面写条件一样,{key:value}
+    db.userdatas.find({score:0})
+1
+多个元素匹配,使用$all, {key:{$all:[a,b]}},元素的顺序无所谓
+    db.userdatas.find({score:{$all:[2,0]}})
+1
+可以使用索引指定查询数组特定位置, {“key.索引号”:value}
+    db.userdatas.find({"score.0":7})  索引从0开始
+1
+查询某个长度的数组,使用$size
+    db.userdatas.find({"score":{$size:4}})
+1
+指定子集,使用$slice,正数是前面多少条,负数是尾部多少条,也可以指定偏
+移量和要返回的元素数量,比如:$slice:[50,10]
+
+    db.userdatas.find({},{"score":{$slice:2}})
+    db.userdatas.find({},{"score":{$slice:-2}})
+    db.userdatas.find({},{"score":{$slice:[1,1]}})
+1
+2
+3
+可以使用来指定符合条件的任意一个数组元素,如:{”users.来指定符合条件的任意一个数组元素,如:{”users.”:1}
+    db.userdatas.find({"score":{$in:[7,4]}},{"score.$":1,name:1})
+1
+$elemMatch:要求同时使用多个条件语句来对一个数组元素进行比较判断
+    db.userdatas.find({score:{$elemMatch:{$gt:8,$lt:12}}})
+1
+查询内嵌文档
+1:查询整个内嵌文档与普通查询是一样的 。
+
+2:如果要指定键值匹配,可以使用“.” 操作符,比如:{“name.first”:”a” ,“name.last”:”b”} 。
+
+3:如果要正确的指定一组条件,那就需要使用$elemMatch,以实现对内嵌文档的多个键进行匹配操作。
+
+插入一个文档：
+    db.userdatas.update({"name":"u2"},{$set:{wendang:{"yw":80,"xw":90}}})
+查询文档：
+     db.userdatas.find({"wendang.yw":80})
+1
+2
+3
+4
+5
+查询记录条数的命令：count
+1,直接使用count()的话，得到的是整个记录的条数。
+
+2，如果要获取按条件查询后记录的条数，需要指定count(true 或者非0 的数)
+
+    db.userdatas.find().count()
+    db.userdatas.find().limit(2).count(true)
+1
+2
+限制返回的记录条数的命令：limit(要返回的条数)
+    db.userdatas.find().limit(2)
+1
+限制返回的记录条数起点的命令:skip(从第几条开始返回)
+    db.userdatas.find().skip(0).limit(2)
+1
+排序的命令:sort({要排序的字段:1为升序,-1为降序})
+    db.userdatas.find().sort({age:-1})  
+    db.userdatas.find().sort({age:-1}).limit(2)
+1
+2
+分页
+分页查询:组合使用limit,skipt和sort skip 效率低 
+当然也可以使用其他方式来分页,比如采用自定义的id,然后根据id来分页
+
+查询给定键的所有不重复的数据,命令:distinct
+     语法:db.runCommand({“distinct”:集合名,“key”:”获得不重复数据的字段”});
+     db.runCommand({"distinct":"userdatas","key":"age"})
+
+     db.runCommand({"distinct":"userdatas","key":"age"})
+    {
+        "waitedMS" : NumberLong(0),
+        "values" : [
+            45,
+            8,
+            33,
+            37,
+            78,
+            32,
+            30,
+            20
+        ],
+        "stats" : {
+            "n" : 11,
+            "nscanned" : 0,
+            "nscannedObjects" : 11,
+            "timems" : 0,
+            "planSummary" : "COLLSCAN"
+        },
+        "ok" : 1
+    }
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+游标
+1:获取游标,示例如下:
+
+var c = db.users.find();
+1
+2:循环游标,可以用集合的方式,示例如下:
+
+   while(c.hasNext()){
+         printjson(c.next().文档键);
+} 
+1
+2
+3
+3:也可以使用forEach来循环,示例如下:
+
+
+   c.forEach(function(obj){
+         print(obj);
+}); 
