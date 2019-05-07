@@ -1,0 +1,70 @@
+ctrl+r  # 匹配查询历史输入的命令
+ss # 显示所有活动状态的socket信息
+which 命令名    # 查看命令位置 
+sudo find / | grep nmh  # 全系统查找包含nmh的相关文件（无奈的情况下）   
+whereis 文件名   # 全系统查看指定文件名的路径
+
+文件内容的替换： sed -i "s/sheng/wang/g" `grep wang -rl ./abc.py`     #  sed [选项]... {脚本(如果没有其他脚本)} [输入文件]...
+
+# 杀进程问题 
+以守护进程的方式运行启动项目服务器： python manage.py runserver >> /dev/null 2>&1 &
+查看所有进程运行状态： htop
+查看运行的总进程数量： ps -ef|wc -l
+查看redis服务器运行进程状态：ps ajx | grep redis  或者 是 ps aux | grep redis       # egrep 支持正则
+查看所有后台运行的进程信息： netstat -tnupl
+查看指定端口号在后台运行对应的进程号： lsof -i:8000    # lsof是查看系统打开的文件，Linux中一切皆文件
+       快速通过端口查看进程号（只会显示进程号）： lsof -Pti :8000    # Pti后有个空格
+杀进程： kill [-9] 进程号
+
+curl  ...     # url接口测试命令集
+
+用户信息保存处：cat /etc/passwd
+ubuntu中创建新用户：
+sudo useradd -m 新用户名
+修改密码：sudo passwd 用户名
+删除用户：sudo userdel -r 用户名
+修改用户组：
+sudo usermod -aG adm 用户名
+sudo usermod -aG sudo 用户名
+
+切换用户： 
+超级用户切换到普通用户： su 用户名
+切换到超级用户： sudo su
+查看当前所有的在线用户： who
+查看当前登录的用户名： whoami
+
+远程连接别人：ssh 对方的用户名@对方的IP 【-p端口号 】
+上传文件： scp 文件名  对方用户名@对方的IP ：路径加文件名  
+下载文件： scp 对方用户名@对方的IP ：路径加文件名  本地路径加文件名
+getconf LONG_BIT  获取系统的进制位
+ubuntu下查看隐藏文件 ctrl+h , 显示编辑路径ctrl+l
+
+进入redis数据库服务器：redis-cli --raw   # 后面的--raw 则是中文支持选项，否则在数据库中无法查看中文。 
+
+创建软链接： ln -s 源文件/文件夹  目标路径   （前后都要使用绝对路径，不见-s即为创建硬链接）   
+创建硬链接： ln file1 lnk1   前后都要使用绝对路径
+
+修改文件/目录权限： sudo chmod 755 文件名  目录的话： sudo chmod -r 755 目录名
+
+卸载程序：（sudo） pip uninstall 包名
+
+pip list    # 查看已安装的包
+pip freeze   # 查看带版本号的已安装的包
+
+# 文件下载工具
+wget http://www.linuxde.net/testfile.zip  【类似 git 下载 】
+
+bash 等价于 source ~/.bashrc    (重启系统配置环境, 一般更改家目录下的.bashrc文件后，需要对其进行更新 ) 
+source virtualenvwrapper.sh  （在家目录下安装 virtualenvs后需要更新此文件，才能使用workon去使用或者切换虚拟环境，如果不能直接使用，就去查找该文件的位置。virtualenvwrapper 虚拟环境的命令集合）
+
+查看本地端口使用情况（切换到root用户）$ netstat -tunlp
+
+查看指定端口占用情况$ sudo lsof -i:端口号
+
+
+Vim中:
+不保存直接退出： q!    保存退出：x
+--------------------- 
+作者：hkss 
+来源：CSDN 
+原文：https://blog.csdn.net/wys578/article/details/80673914 
