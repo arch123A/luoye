@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="905c7516-a926-4d65-a340-fac143453be7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dztxt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test11.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test22.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="905c7516-a926-4d65-a340-fac143453be7" name="Default" comment="sss">
+      <change afterPath="$PROJECT_DIR$/Os_study.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test44.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test55.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test66.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test67.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i3.py" beforeDir="false" afterPath="$PROJECT_DIR$/i3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whiel99乘法表.py" beforeDir="false" afterPath="$PROJECT_DIR$/whiel99乘法表.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abcd.py" beforeDir="false" afterPath="$PROJECT_DIR$/abcd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test11.py" beforeDir="false" afterPath="$PROJECT_DIR$/test11.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test22.py" beforeDir="false" afterPath="$PROJECT_DIR$/test22.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tony班级.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,30 +113,25 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>工厂</find>
-      <find>sharing_url</find>
-      <find>iphone</find>
-      <find>props=</find>
-      <find>[</find>
-      <find>header</find>
-      <find>form</find>
-      <find>coo</find>
-      <find>罗勇</find>
-    </findStrings>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="JupyterTrust" id="a5f382d2-d3bd-436d-9e5a-5ed9c1a73e51" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="1390" />
-    <option name="height" value="1756" />
-  </component>
   <component name="ProjectId" id="1lXzejHGFsXnHcw8Dka2E3REcsk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -154,15 +148,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\test\Tony_study" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test11">
-    <configuration name="sum1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.abcd">
+    <configuration name="Os_study" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tony_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -175,7 +169,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sum1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Os_study.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,7 +178,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="t1 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="abcd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tony_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -197,7 +191,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/t1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/abcd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -206,7 +200,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test11" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test44" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tony_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -219,7 +213,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test11.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test44.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -228,7 +222,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tieba2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test66" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tony_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -241,7 +235,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tieba2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test66.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -250,7 +244,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="whiel99乘法表" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test67" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Tony_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -263,7 +257,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whiel99乘法表.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test67.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -273,19 +267,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.sum1" />
-      <item itemvalue="Python.t1 (1)" />
-      <item itemvalue="Python.test11" />
-      <item itemvalue="Python.whiel99乘法表" />
-      <item itemvalue="Python.tieba2" />
+      <item itemvalue="Python.test44" />
+      <item itemvalue="Python.test66" />
+      <item itemvalue="Python.test67" />
+      <item itemvalue="Python.Os_study" />
+      <item itemvalue="Python.abcd" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test11" />
-        <item itemvalue="Python.tieba2" />
-        <item itemvalue="Python.whiel99乘法表" />
-        <item itemvalue="Python.t1 (1)" />
-        <item itemvalue="Python.sum1" />
+        <item itemvalue="Python.abcd" />
+        <item itemvalue="Python.Os_study" />
+        <item itemvalue="Python.test67" />
+        <item itemvalue="Python.test66" />
+        <item itemvalue="Python.test44" />
       </list>
     </recent_temporary>
   </component>
@@ -300,8 +294,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1547032196379</updated>
-      <workItem from="1607758327378" duration="2695000" />
+      <workItem from="1607758327378" duration="13251000" />
+      <workItem from="1607835054454" duration="7461000" />
     </task>
+    <task id="LOCAL-00001" summary="sss">
+      <created>1607761051299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607761051299</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -316,30 +319,43 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="sss" />
+    <option name="LAST_COMMIT_MESSAGE" value="sss" />
   </component>
   <component name="WindowStateProjectService">
     <state x="365" y="171" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1607758509844">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="365" y="171" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1368.872@0.0.1368.872" timestamp="1607758509844" />
-    <state width="1326" height="218" key="GridCell.Tab.0.bottom" timestamp="1607760880153">
+    <state x="289" y="4" key="CommitChangelistDialog2" timestamp="1607850842273">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="218" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607760880153" />
-    <state width="1326" height="218" key="GridCell.Tab.0.center" timestamp="1607760880153">
+    <state x="289" y="4" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1607850842273" />
+    <state x="465" y="191" key="FileChooserDialogImpl" timestamp="1607848853977">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="218" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607760880153" />
-    <state width="1326" height="218" key="GridCell.Tab.0.left" timestamp="1607760880153">
+    <state x="465" y="191" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1607848853977" />
+    <state width="1326" height="218" key="GridCell.Tab.0.bottom" timestamp="1607849717284">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="218" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607760880153" />
-    <state width="1326" height="218" key="GridCell.Tab.0.right" timestamp="1607760880153">
+    <state width="1326" height="218" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1607849717284" />
+    <state width="1326" height="218" key="GridCell.Tab.0.center" timestamp="1607849717284">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="218" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607760880153" />
+    <state width="1326" height="218" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1607849717284" />
+    <state width="1326" height="218" key="GridCell.Tab.0.left" timestamp="1607849717283">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="218" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1607849717283" />
+    <state width="1326" height="218" key="GridCell.Tab.0.right" timestamp="1607849717284">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="218" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1607849717284" />
+    <state x="186" y="80" key="SettingsEditor" timestamp="1607851211480">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="186" y="80" key="SettingsEditor/0.0.1368.872@0.0.1368.872" timestamp="1607851211480" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -382,6 +398,11 @@
           <line>109</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test22.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -393,9 +414,17 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Tony_study$test33.coverage" NAME="test33 Coverage Results" MODIFIED="1607770972492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Tony_study$tieba2.coverage" NAME="tieba2 Coverage Results" MODIFIED="1607759488142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Tony_study$test11.coverage" NAME="test11 Coverage Results" MODIFIED="1607760880138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$test44.coverage" NAME="test44 Coverage Results" MODIFIED="1607778518648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$test55.coverage" NAME="test55 Coverage Results" MODIFIED="1607777764032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$test66.coverage" NAME="test66 Coverage Results" MODIFIED="1607836284371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$abcd.coverage" NAME="abcd Coverage Results" MODIFIED="1607849717254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$Os_study.coverage" NAME="Os_study Coverage Results" MODIFIED="1607848435377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$test11.coverage" NAME="test11 Coverage Results" MODIFIED="1607764206999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$test22.coverage" NAME="test22 Coverage Results" MODIFIED="1607763322488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Tony_study$whiel99.coverage" NAME="whiel99乘法表 Coverage Results" MODIFIED="1607759483452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Tony_study$test67.coverage" NAME="test67 Coverage Results" MODIFIED="1607848258457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">

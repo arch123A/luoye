@@ -40,12 +40,19 @@ s1="""
 39.王语欧
 40.吴臻 
 """
-# s1=s1.strip("\n")
-# ls1=s1.splitlines()
-# ls2=[]
-# for i in ls1:
-#     ls2.append(i.split(".")[1])
-# print(ls2)
+s1=s1.strip("\n")
+ls1=s1.splitlines()
+namelist=[]
+for i in ls1:
+    namelist.append( i.split( "." )[1] )
+print( namelist )
+import pickle
+import os
+file_list=os.path.join("d:\\","test","namelist.pkl")
+pf=open(file_list,'wb')
+pickle.dump(namelist,pf)
+print(file_list)
+pf.close()
 # print(len(ls2))
 
 # def fx(x):
