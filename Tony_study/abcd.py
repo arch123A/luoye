@@ -18,4 +18,25 @@
 #     print ( "open file error!" )
 
 
+def hd(a):
+    """
+    头文件处理函数，
+    :param a: request请求的字符串
+    :return: 一个字典，head
+    """
+    a = a.strip ( '\n' )
+    try:
+        l = a.split ( "\n" )
+        l1 = []
+        l2 = []
+        head = dict ()
+
+        for each in l:
+            key = each.split ( ":" )[0].strip ()
+            val = each.split ( ":" )[1].strip ()
+            head[key] = val
+
+        return head
+    except:
+        print ( "输入的header有错误" )
 
