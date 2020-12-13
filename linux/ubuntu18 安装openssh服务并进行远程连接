@@ -1,0 +1,32 @@
+ubuntu18 安装openssh服务并进行远程连接
+H 是建立在应用层基础上的安全协议。SSH 是目前较可靠，专为远程登录会话和其他网络服务提供安全性的协议。利用 SSH 协议可以有效防止远程管理过程中的信息泄露问题。如果没有开启ssh服务则无法远程连接终端。
+
+1.查看是否开启了ssh服务是否安装,使用命令：
+
+sudo ps -ef |grep sshd
+
+下图是没有开启：
+
+2.先更新资源列表
+
+sudo apt-get update
+
+下图为我刚刚更新过了，故没有什么信息。
+
+3.安装ssh服务
+
+sudo apt-get install openssh-server
+
+下图为已安装完成
+
+4.查看ssh服务，如果开启了则可以使用远程连接软件进行登录了。
+
+ps -ef |grep sshd
+
+例如使用SecureCRT软件远程登录
+
+5.
+
+开启ssh服务：systemctl start ssh
+
+关闭ssh服务：systemctl stop ssh

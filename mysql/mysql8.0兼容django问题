@@ -1,0 +1,17 @@
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password  BY 'password';
+在MY.INI中修改
+[mysqld]
+default_authentication_plugin=mysql_native_password
+再重置下密码：alter user 'root'@'localhost' identified by '123456';
+
+
+
+   1). ALTER USER 'root'@'localhost' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER; #修改加密规则 
+
+         2).ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'; #更新一下用户的密码 
+
+        3).FLUSH PRIVILEGES; #刷新权限
+
+        4).再重置下密码：alter user 'root'@'localhost' identified by '123456';
+
+     2.重启服务。
